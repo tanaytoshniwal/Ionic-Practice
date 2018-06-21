@@ -11,7 +11,7 @@
   </ion-item>
   <ion-item class="p-0">
     <ion-label>Priority</ion-label>
-    <ion-select [(ngModel)]="priority">
+    <ion-select [(ngModel)]="priority" interface="popover">
       <ion-option class="dropdown-item bg-light">High</ion-option>
       <ion-option class="dropdown-item bg-light">Medium</ion-option>
       <ion-option class="dropdown-item bg-light">Low</ion-option>
@@ -34,13 +34,14 @@
   <ion-list *ngFor="let l of list; let i = index;" class="animated fadeIn my-2">
     <ion-card *ngSwitchCase="l.priority">
       <div class="">
-        <ion-card-header (click)="status(l)">
+        <ion-card-header>
           <ion-fab top right>
             <button ion-fab mini color="info">
               <ion-icon name="ios-more-outline"></ion-icon>
             </button>
             <ion-fab-list side="left">
-              <button ion-fab (click)="edit(l)" color="success"><ion-icon name="ios-build-outline"></ion-icon></button>
+              <button ion-fab (click)="status(l)" color="secondary"><ion-icon name="ios-checkmark-circle-outline"></ion-icon></button>
+              <button ion-fab (click)="edit(l)" color="dark"><ion-icon name="ios-build-outline"></ion-icon></button>
               <button ion-fab (click)="remove(l, i)" color="danger"><ion-icon name="ios-trash-outline"></ion-icon></button>
             </ion-fab-list>
           </ion-fab>
