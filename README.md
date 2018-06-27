@@ -1,2 +1,2 @@
 # App
-Ionic Practice Application
+Ionic Todo Application
